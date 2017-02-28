@@ -1,0 +1,9 @@
+.normal { 
+/* normal 相关的所有样式 */ 
+border:1px solid #EBEBEB;
+line-height: 200%;
+} 
+.disabled {
+ /* disabled 相关的所有样式 */ 
+
+}

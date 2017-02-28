@@ -1,0 +1,21 @@
+CACHE MANIFEST
+# cache for a test
+
+NETWORK:
+*
+
+CACHE:
+/libs/react.js
+/libs/react-dom.js
+/libs/react-with-addons.js
+/libs/react@15.0.0.js
+/libs/react-dom@15.0.0.js
+/libs/react-with-addons@15.1.0.js
+
+FALLBACK:
+/libs/react.js https://unpkg.com/react@15.4.2/dist/react.js
+/libs/react-dom.js https://unpkg.com/react-dom@15.4.2/dist/react-dom.js
+/libs/react@15.0.0.js https://unpkg.com/react@15.0.0/dist/react.js
+/libs/react-dom@15.0.0.js https://unpkg.com/react-dom@15.0.0/dist/react-dom.js
+/libs/react-with-addons.js https://unpkg.com/react@15.0.0/dist/react-with-addons.js
+/libs/react-with-addons@15.1.0.js https://unpkg.com/react@15.1.0/dist/react-with-addons.js
