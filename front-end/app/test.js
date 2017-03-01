@@ -6,11 +6,11 @@ import React from 'react';
 import { createStore, compose} from 'redux'
 import { Provider } from 'react-redux'
 // import Welcome from '../components/welcome.js'
-import App from '../components/app.js'
+// import App from '../components/app.js'
 import reducer from '../reducers'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import DevTools from '../container/devtools.js'
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { Router, Route, Link, browserHistory, hashHistory } from 'react-router'
 
 const enhancer = compose(
   DevTools.instrument()
@@ -37,27 +37,18 @@ let defaultState = {
 
 const store = createStore(reducer, defaultState, enhancer)
 
-const About = () => {
-  return (
-      <div>about....</div>
-    )
-}
 
 const Nav = () => {
   return (
       <ul>
           <li><Link to='/'>Main</Link></li>
-          <li><Link to='/App'>App</Link></li>
-          <li><Link to='/About'>About</Link></li>
+          <li><Link to='/u_1'>Unit 1</Link></li>
+          <li><Link to='/u_2'>Unit 2</Link></li>
+          <li><Link to='/u_3'>Unit 3</Link></li>
         </ul>
     )
 }
 
-const NoMatch = () => {
-  return (
-      <div>todo....</div>
-    )
-}
 
 const Main = (props) => {
   return (
@@ -68,28 +59,30 @@ const Main = (props) => {
     )
 }
 
-const _App = () => {
-    return  <Provider store={store}>
-            <div>
-             <MuiThemeProvider>
-              <App />
-             </MuiThemeProvider>
-             <DevTools />
-            </div>
-          </Provider>
-}
+const rootRoute = {
+  childRoutes: [{
+    path: '/',
+    component: Main,
+    ...require('./routes.js')
+  }]
+};
+  
 
 function component () {
 
   render((
-  <Router history={browserHistory}>
-    <Route path="/" component={Main}>
-      <Route path="/App" component={_App}/>
-      <Route path="/about" component={About}/>
-      <Route path="*" component={NoMatch}/>
-    </Route>
-  </Router>
-), document.getElementById('root'))
+      <Router history={browserHistory} routes={rootRoute} />  
+    ), document.getElementById('root'))
+
+  // render((
+  //     <Router history={browserHistory} >  
+  //      <Route path="/" component={Main}>
+  //           <Route path="app" component={_App}/>
+  //           <Route path="about" component={About}/>
+  //           <Route path="*" component={NoMatch}/>
+  //         </Route>     
+  //     </Router>
+  //   ), document.getElementById('root'))
 
   // render(
   //     <div>hh</div>

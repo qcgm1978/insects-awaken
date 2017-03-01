@@ -9,8 +9,6 @@ const UnipusTab = ({ todo, test, dispatch}) => {
   const toggleShowName = () => dispatch(showName());
   // const ele = makeElement('RaisedButton', {label:'Button', 
   //     )
-console.log('unipus tab_______')
-console.log(UnipusTab.propTypes)
   const events = {
     onTouchTap: toggleShowName,
     onClick: toggleShowName

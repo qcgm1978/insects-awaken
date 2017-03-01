@@ -13,7 +13,8 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: './dist/'
+    path: __dirname + '/dist',
+    publicPath: '/'
   },
   externals:{
     'react': 'React',
@@ -37,6 +38,7 @@ module.exports = {
         'include':[
             //指定app这个文件里面的采用babel
             path.resolve(__dirname,'./app'),
+            path.resolve(__dirname,'./groups'),
             path.resolve(__dirname,'./actions'),
             path.resolve(__dirname,'./reducers'),
             path.resolve(__dirname,'./container'),
