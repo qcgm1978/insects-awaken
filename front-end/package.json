@@ -12,6 +12,7 @@
   "author": "unipus",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.14.1",
     "lodash": "^4.17.4",
     "material-ui": "^0.16.7",
     "react": "15.0.0",

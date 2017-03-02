@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: 'inline-source-map',
   entry: { 
     // 'react': 'react',
     // 'react-dom': 'react-dom',
