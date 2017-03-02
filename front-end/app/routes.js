@@ -49,7 +49,7 @@ const u_3 = {
 
 
 module.exports = {
-    path: '/',
+    // path: '/',
     childRoutes: [
         u_1,
         u_2,

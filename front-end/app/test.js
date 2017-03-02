@@ -56,7 +56,7 @@ const rootRoute = {
         // component: Main,
         component: class extends React.Component {
             render() {
-                return <Main a="1"/>;
+                return <Main {...this.props} a="1"/>;
             }
         },
         ...require('./routes.js')
